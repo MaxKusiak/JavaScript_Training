@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bandInfo{
+    display: flex;
+    margin: 20px 0;
+    /* width: 650px; */
+    /* height: 270px; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    background-color: beige;
+    padding: 20px;
+}
+.space{
+    margin: 0 5px;
+}
+.logoImg{
+    width: 250px;
+    height: 250px;
+}
+.bandName{
+    width: 250px;
+}
+
+.soloistName{
+    width: 400px;
+}
+.participants{
+    width: 400px;
+    padding: 20px 0;
+}
+.songs{
+    width: 400px;
+}
+.songsList{
+    margin-left: 0;
+    padding-left: 0;
+}
+.song{
+    list-style-type: none;
+}
