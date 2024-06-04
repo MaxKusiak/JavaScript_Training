@@ -1,5 +1,5 @@
-// let response = await fetch('./bands.json');
-// let bands = await response.json();
+let response = await fetch('./bands.json');
+let bands = await response.json();
 
 function generateBandInfo(band, i){
     // let tracks = band.tracks.filter(track => {return track.name != null && track.name.length != 0 && track.duration != null && track.duration != 0});
