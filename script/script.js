@@ -1,12 +1,12 @@
-let response = await fetch('./bands.json');
-let bands = await response.json();
+// let response = await fetch('./bands.json');
+// let bands = await response.json();
 
 function generateBandInfo(band, i){
-    let tracks = band.tracks.filter(track => {return track.name != null && track.name.length != 0 && track.duration != null && track.duration != 0});
-    let tracksLi = ``;
-    for(let i = 0; i < tracks.length; i++){
-            tracksLi += `<li class="song">${tracks[i].name} - ${parseInt(tracks[i].duration / 60)} хв ${tracks[i].duration % 60} с</li>`;
-    }
+    // let tracks = band.tracks.filter(track => {return track.name != null && track.name.length != 0 && track.duration != null && track.duration != 0});
+    // let tracksLi = ``;
+    // for(let i = 0; i < tracks.length; i++){
+    //         tracksLi += `<li class="song">${tracks[i].name} - ${parseInt(tracks[i].duration / 60)} хв ${tracks[i].duration % 60} с</li>`;
+    // }
     let left = `
         <div class="left">
             <div class="logo"><img src="${band.icon != null && band.icon.length != 0 ? band.icon : "https://placehold.co/250"}" alt="logo" class="logoImg"></div>
@@ -19,8 +19,8 @@ function generateBandInfo(band, i){
             <div class="participants"><p>${(band.participants != null && band.participants.length != 0) ? (band.participants.filter(participant => {return participant.length != 0 && participant != band.soloist}).length != 0 ? band.participants.filter(participant => {return participant.length != 0 && participant != band.soloist}) : "None") : ("None")}</p></div>
             <div class="songs">
                 <ul class="songsList">
-                    ${tracksLi.length != 0 ? tracksLi : "None"}
-                    <!-- ${band.tracks.map(track => {return (track.name != null && track.name.length != 0 && track.duration != null && track.duration != 0) ? (`<li class="song">${track.name} - ${parseInt(track.duration / 60)} хв ${track.duration % 60} с</li>`) : "None"})} -->
+                    <!-- ${tracksLi.length != 0 ? tracksLi : "None"} -->
+                    ${band.tracks.map(track => {return (track.name != null && track.name.length != 0 && track.duration != null && track.duration != 0) ? (`<li class="song">${track.name} - ${parseInt(track.duration / 60)} хв ${track.duration % 60} с</li>`) : ""}).join("")}
                 </ul>
             </div>
         </div>
