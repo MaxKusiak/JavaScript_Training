@@ -1,16 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.bandInfo{
+
+.bandInfo {
     display: flex;
     margin: 20px 0;
+    position: relative;
     /* width: 650px; */
     /* height: 270px; */
     /* align-items: center; */
@@ -18,31 +21,131 @@ body{
     background-color: beige;
     padding: 20px;
 }
-.space{
+
+.deletBand {
+    cursor: pointer;
+    position: absolute;
+    top: 13px;
+}
+
+.deletBand:before,
+.deletBand:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background: gray;
+}
+
+.deletBand:before {
+    transform: rotate(45deg);
+}
+
+.deletBand:after {
+    transform: rotate(-45deg);
+}
+
+.space {
     margin: 0 5px;
 }
-.logoImg{
+
+.logoImg {
     width: 250px;
     height: 250px;
 }
-.bandName{
+
+.bandName {
     width: 250px;
 }
 
-.soloistName{
+.soloistName {
     width: 400px;
 }
-.participants{
+
+.participants {
     width: 400px;
     padding: 20px 0;
 }
-.songs{
+
+.songs {
     width: 400px;
 }
-.songsList{
+
+.songsList {
     margin-left: 0;
     padding-left: 0;
 }
-.song{
+
+.song {
     list-style-type: none;
+}
+
+.addTrack {
+    height: min-content;
+    padding: 2px 3px;
+    position: absolute;
+    bottom: 20px;
+}
+.createMdBand{
+    height: min-content;
+    padding: 2px 3px;
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+}
+
+.md {
+    visibility: hidden;
+}
+
+.md_bg {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 90;
+    background-color: #000000;
+    opacity: 0.35;
+    position: fixed;
+}
+
+.md_dialog {
+    top: 40%;
+    left: 50%;
+    font-size: 14px;
+    font-family: 'Tahoma', Arial, sans-serif;
+    z-index: 100;
+    width: 90%;
+    max-width: 950px;
+    position: fixed;
+    padding: 10px;
+    border: 1px solid #383838;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, .22), 0 19px 60px rgba(0, 0, 0, .3);
+    transform: translate(-50%, 0);
+}
+
+.md_close {
+    cursor: pointer;
+    position: absolute;
+    padding: 0;
+    top: -10px;
+    right: -5px;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #cccccc;
+    border-radius: 50%;
+    background-color: rgba(61, 61, 61, 0.8);
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #cccccc;
+}
+
+.md_close:hover {
+    background-color: rgba(252, 20, 0, 0.8);
 }
